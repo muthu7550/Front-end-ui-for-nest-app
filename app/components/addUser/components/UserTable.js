@@ -44,7 +44,7 @@ export default function UserTable({ triggerGlobalRefresh }) {
     };
 
     try {
-      const response = await fetch("https://backend-nest-2gr8p8vv7-muthu7550s-projects.vercel.app//users/filter", {
+      const response = await fetch("https://backend-nest-5brg2qdrz-muthu7550s-projects.vercel.app/users/filter", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -63,7 +63,7 @@ export default function UserTable({ triggerGlobalRefresh }) {
 
         const newToken = localStorage.getItem("access_token");
 
-        const response = await fetch("https://backend-nest-2gr8p8vv7-muthu7550s-projects.vercel.app//users/filter", {
+        const response = await fetch("https://backend-nest-5brg2qdrz-muthu7550s-projects.vercel.app/users/filter", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -97,7 +97,7 @@ export default function UserTable({ triggerGlobalRefresh }) {
 
     try {
       const response = await fetch(
-        `https://backend-nest-2gr8p8vv7-muthu7550s-projects.vercel.app//users/${updatedData.id}`,
+        `https://backend-nest-5brg2qdrz-muthu7550s-projects.vercel.app/users/${updatedData.id}`,
         {
           method: "PUT",
           headers: {
@@ -118,7 +118,7 @@ export default function UserTable({ triggerGlobalRefresh }) {
         const newToken = localStorage.getItem("access_token");
 
         const response = await fetch(
-          `https://backend-nest-2gr8p8vv7-muthu7550s-projects.vercel.app//users/${updatedData.id}`,
+          `https://backend-nest-5brg2qdrz-muthu7550s-projects.vercel.app/users/${updatedData.id}`,
           {
             method: "PUT",
             headers: {
@@ -160,7 +160,7 @@ export default function UserTable({ triggerGlobalRefresh }) {
     }
 
     try {
-      const response = await fetch("https://backend-nest-2gr8p8vv7-muthu7550s-projects.vercel.app//auth/refresh", {
+      const response = await fetch("https://backend-nest-5brg2qdrz-muthu7550s-projects.vercel.app/auth/refresh", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -193,7 +193,7 @@ export default function UserTable({ triggerGlobalRefresh }) {
     console.log(token);
 
     try {
-      let response = await fetch("https://backend-nest-2gr8p8vv7-muthu7550s-projects.vercel.app//users", {
+      let response = await fetch("https://backend-nest-5brg2qdrz-muthu7550s-projects.vercel.app/users", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -214,7 +214,7 @@ export default function UserTable({ triggerGlobalRefresh }) {
         if (isRefreshed) {
           const newToken = localStorage.getItem("access_token");
 
-          const response = await fetch("https://backend-nest-2gr8p8vv7-muthu7550s-projects.vercel.app//users", {
+          const response = await fetch("https://backend-nest-5brg2qdrz-muthu7550s-projects.vercel.app/users", {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
@@ -262,7 +262,7 @@ export default function UserTable({ triggerGlobalRefresh }) {
     const token = localStorage.getItem("access_token");
 
     try {
-      let response = await fetch(`https://backend-nest-2gr8p8vv7-muthu7550s-projects.vercel.app//users/${user._id}`, {
+      let response = await fetch(`https://backend-nest-5brg2qdrz-muthu7550s-projects.vercel.app/users/${user._id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -282,7 +282,7 @@ export default function UserTable({ triggerGlobalRefresh }) {
 
         const newToken = localStorage.getItem("access_token");
 
-        let response = await fetch(`https://backend-nest-2gr8p8vv7-muthu7550s-projects.vercel.app//users/${user._id}`, {
+        let response = await fetch(`https://backend-nest-5brg2qdrz-muthu7550s-projects.vercel.app/users/${user._id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
@@ -328,7 +328,7 @@ export default function UserTable({ triggerGlobalRefresh }) {
     console.log("token", token);
 
     const response = await fetch(
-      `https://backend-nest-2gr8p8vv7-muthu7550s-projects.vercel.app//users/search?name=${search}`,
+      `https://backend-nest-5brg2qdrz-muthu7550s-projects.vercel.app/users/search?name=${search}`,
       {
         method: "GET",
         headers: {
@@ -349,7 +349,7 @@ export default function UserTable({ triggerGlobalRefresh }) {
       const newToken = localStorage.getItem("access_token");
 
       const response = await fetch(
-        `https://backend-nest-2gr8p8vv7-muthu7550s-projects.vercel.app//users/search?name=${search}`,
+        `https://backend-nest-5brg2qdrz-muthu7550s-projects.vercel.app/users/search?name=${search}`,
         {
           method: "GET",
           headers: {

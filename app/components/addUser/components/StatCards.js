@@ -49,7 +49,7 @@ export default function StatCards({key}) {
     async function fetchData() {
       const token = localStorage.getItem("access_token"); 
       try {
-        const response = await fetch("https://backend-nest-2gr8p8vv7-muthu7550s-projects.vercel.app//users", {
+        const response = await fetch("https://backend-nest-5brg2qdrz-muthu7550s-projects.vercel.app//users", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
