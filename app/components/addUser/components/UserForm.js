@@ -8,7 +8,7 @@ export default function UserForm({triggerGlobalRefresh}) {
  async function fetchData(data) {
     const token = localStorage.getItem("access_token");
 
-    const responce = await fetch("http://localhost:5000/users", {
+    const responce = await fetch("https://front-end-ui-for-nest-app.vercel.app//users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export default function UserForm({triggerGlobalRefresh}) {
       const newtoken = localStorage.getItem("access_token")
       console.log(newtoken)
       if(refreshData){
-         const responce = await fetch("http://localhost:5000/users", {
+         const responce = await fetch("https://front-end-ui-for-nest-app.vercel.app//users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -58,7 +58,7 @@ export default function UserForm({triggerGlobalRefresh}) {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/auth/refresh", {
+      const response = await fetch("https://front-end-ui-for-nest-app.vercel.app//auth/refresh", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

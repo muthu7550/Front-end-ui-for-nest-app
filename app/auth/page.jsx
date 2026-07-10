@@ -51,7 +51,7 @@ export default function AuthPage() {
     const endpoint = isLogin ? "login" : "register";
 
     try {
-      const response = await fetch(`http://localhost:5000/auth/${endpoint}`, {
+      const response = await fetch(`https://front-end-ui-for-nest-app.vercel.app//auth/${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -79,7 +79,7 @@ export default function AuthPage() {
   const triggerTestApiCall = async () => {
     setApiResponse(null);
     try {
-      const res = await secureFetch("http://localhost:5000/users");
+      const res = await secureFetch("https://front-end-ui-for-nest-app.vercel.app//users");
       const data = await res.json();
       setApiResponse({ data });
     } catch (err) {
