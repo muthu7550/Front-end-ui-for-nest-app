@@ -51,7 +51,7 @@ export default function AuthPage() {
     const endpoint = isLogin ? "login" : "register";
 
     try {
-      const response = await fetch(`https://backend-nest-2gr8p8vv7-muthu7550s-projects.vercel.app/users/auth/${endpoint}`, {
+      const response = await fetch(`https://backend-nest-2gr8p8vv7-muthu7550s-projects.vercel.app/auth/${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
