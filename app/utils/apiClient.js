@@ -43,7 +43,7 @@ export async function secureFetch(url, options = {}) {
       console.warn("Access token expired! Requesting silent refresh token rotation...");
       
       try {
-        const refreshResponse = await fetch("https://backend-nest-7n6bh4kl7-muthu7550s-projects.vercel.app/auth/refresh", {
+        const refreshResponse = await fetch("https://backend-nest-2gr8p8vv7-muthu7550s-projects.vercel.app//auth/refresh", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ userId: user.sub, refresh_token: refreshToken }),
