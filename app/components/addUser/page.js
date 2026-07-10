@@ -16,18 +16,32 @@ import StatCards from "./components/StatCards";
 import UserTable from "./components/UserTable";
 import UserForm from "./components/UserForm";
 import ApiPlayground from "./components/ApiPlayground";
+import { useRouter } from "next/navigation"; 
+
 
 export default function AddUserPage() {
   const [activeTab, setActiveTab] = useState("dashboard");
    const [refreshTrigger, setRefreshTrigger] = useState(0); 
+         const router = useRouter(); 
+
 
     const triggerGlobalRefresh = () => {
     setRefreshTrigger(prev => prev + 1);
   };
 
+
+  useEffect(()=>{
+    const token = localStorage.getItem('access_token')
+
+    if(!token){
+router.push('/auth')
+    }
+
+  },[])
+
   return (
     <Container fluid className="min-vh-100 bg-dark text-white py-4">
-      <Row className="mb-4 align-items-center">
+      <Row className="mb-4 align-items-center justify-between">
         <Col>
           <Badge bg="warning" text="dark" className="mb-2">
             NestJS Backend Practice
@@ -36,6 +50,13 @@ export default function AddUserPage() {
           <h1 className="fw-bold display-5">
             User Admin Dashboard
           </h1>
+        </Col>
+
+        <Col className="d-flex justify-end pe-3">
+         <button className="btn btn-primary" onClick={()=>{
+          localStorage.clear("token")
+          router.push('/auth')
+         }}>Logout</button>
         </Col>
 
       </Row>

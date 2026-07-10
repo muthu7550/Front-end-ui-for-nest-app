@@ -207,7 +207,6 @@ export default function UserTable({ triggerGlobalRefresh }) {
         console.warn(
           "Access token expired (401). Triggering token rotation handler...",
         );
-        alert("dd");
 
         const isRefreshed = await RefreshToken();
 
@@ -231,7 +230,6 @@ export default function UserTable({ triggerGlobalRefresh }) {
         } else {
           localStorage.clear();
           setuserInfo([]);
-          alert("Your session has expired. Please log in again.");
           return;
         }
       }
