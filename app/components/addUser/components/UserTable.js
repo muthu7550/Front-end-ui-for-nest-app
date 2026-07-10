@@ -20,6 +20,8 @@ export default function UserTable({ triggerGlobalRefresh }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedRole, setSelectedRole] = useState("Filter by role");
   const [selectedStatus, setSelectedStatus] = useState("Filter by status");
+  const [Loading, setLoading] = useState(true);
+
   const [filters, setFilters] = useState({
     role: "",
     status: "",
@@ -93,7 +95,7 @@ export default function UserTable({ triggerGlobalRefresh }) {
   const handleSaveUser = async (updatedData) => {
     console.log(updatedData, "updteddata");
     const token = localStorage.getItem("access_token");
-    console.log;
+    setLoading(true)
 
     try {
       const response = await fetch(
@@ -133,6 +135,7 @@ export default function UserTable({ triggerGlobalRefresh }) {
       }
 
       fetchData();
+      setLoading(false)
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -223,6 +226,7 @@ export default function UserTable({ triggerGlobalRefresh }) {
 
       const res = await response.json();
 
+
           const safeData = Array.isArray(res) ? res : [];
           console.log(safeData, "dsfdsd");
 
@@ -243,6 +247,8 @@ export default function UserTable({ triggerGlobalRefresh }) {
       setuserInfo(safeData);
     } catch (error) {
       console.error("Error fetching data:", error);
+    }finally{
+      setLoading(false)
     }
   };
 
@@ -434,6 +440,10 @@ export default function UserTable({ triggerGlobalRefresh }) {
 
       <Card className="bg-dark border-secondary shadow">
         <Card.Body>
+          { Loading  ?
+          <div className="align-middle d-flex justify-center w-100 text-white">
+          <h1 >Loading...</h1> 
+          </div>:
           <Table responsive hover variant="dark" className="align-middle">
             <thead>
               <tr>
@@ -520,6 +530,7 @@ export default function UserTable({ triggerGlobalRefresh }) {
               )}
             </tbody>
           </Table>
+}
         </Card.Body>
       </Card>
 
