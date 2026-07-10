@@ -48,7 +48,7 @@ export default function AuthPage() {
 
     setIsProcessing(true);
     setApiResponse(null);
-    const endpoint = isLogin ? "login" : "register";
+    const endpoint = isLogin ? "login" : "register";   
 
     try {
       const response = await fetch(`https://backend-nest-2gr8p8vv7-muthu7550s-projects.vercel.app/auth/${endpoint}`, {
