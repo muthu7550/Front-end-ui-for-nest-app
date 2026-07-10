@@ -87,7 +87,7 @@ export default function ApiPlayground() {
 
               <Form.Group className="mb-3">
                 <Form.Label>Endpoint</Form.Label>
-                <Form.Control defaultValue="https://backend-nest-5brg2qdrz-muthu7550s-projects.vercel.app/users" name="endpoint" />
+                <Form.Control defaultValue="https://backend-nest-app.vercel.app/users" name="endpoint" />
               </Form.Group>
 
               <Form.Group className="mb-3">
